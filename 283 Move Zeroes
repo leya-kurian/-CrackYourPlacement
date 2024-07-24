@@ -1,0 +1,9 @@
+class Solution(object):
+    def moveZeroes(self, nums):
+        z=nums.count(0)
+        s=[0]*z
+        for i in range(z):
+            nums.remove(0)
+        nums.extend(s)
+
+        
