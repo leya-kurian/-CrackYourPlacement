@@ -1,12 +1,7 @@
 class Solution(object):
     def findDuplicate(self, nums):
-        l=len(nums)
-        d=None
-        for i in range(l-1):
-            s=nums[i+1:]
-            if nums[i] in s:
-                d=nums[i]
-                break
-        return d
-
-        
+        s=set()
+        for i in nums:
+            if i in s:
+                return i
+            s.add(i)
