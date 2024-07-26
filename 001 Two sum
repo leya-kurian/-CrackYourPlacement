@@ -1,0 +1,15 @@
+class Solution(object):
+    def twoSum(self, nums, target):
+        l=[]
+        for i in range(len(nums)):
+            s=target-nums[i]
+            t=nums[i+1:len(nums)]
+            if s in t:
+                l.append(i)
+                nums[i]=float('inf')
+                a=nums.index(s)
+                l.append(a)
+                return l
+
+
+        
