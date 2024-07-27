@@ -1,0 +1,17 @@
+class Solution(object):
+    def isValid(self, s):
+        d={'(':')','{':'}','[':']'}
+        l=[]
+        for i in s:
+            if i in ['(','{','[']:
+                l.append(i)
+            else:
+                if l!=[]:
+                    a=l.pop()
+                    if d[a]!=i:
+                        return False
+                else:
+                    return False
+        if l==[]:
+            return True
+        
