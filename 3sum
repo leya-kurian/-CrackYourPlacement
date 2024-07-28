@@ -1,0 +1,27 @@
+class Solution(object):
+    def threeSum(self, nums):
+        nums.sort()  # Sort the array
+        result = []
+        length = len(nums)
+        
+        for i in range(length - 2):
+            if i > 0 and nums[i] == nums[i - 1]:  # Skip duplicates for the current element
+                continue
+            
+            target = -nums[i]  # Target for the two sum problem
+            seen = set()
+            j = i + 1
+            
+            while j < length:
+                complement = target - nums[j]
+                if complement in seen:
+                    result.append([nums[i], nums[j], complement])
+                    
+                    # Skip duplicates for the second element
+                    while j + 1 < length and nums[j] == nums[j + 1]:
+                        j += 1
+                
+                seen.add(nums[j])
+                j += 1
+        
+        return result
