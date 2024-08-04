@@ -1,0 +1,9 @@
+class Solution(object):
+    def convertToTitle(self, columnNumber):
+        s='ZABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        o=''
+        while columnNumber>0:
+            columnNumber-=1
+            o=s[columnNumber%26+1]+o
+            columnNumber//=26
+        return o
