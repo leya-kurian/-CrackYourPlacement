@@ -1,0 +1,13 @@
+class Solution(object):
+    def maximumProduct(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        nums.sort()
+        s1=nums[-1]*nums[-2]*nums[-3]
+        s2=nums[0]*nums[1]*nums[-1]
+        if s1>s2:
+            return s1
+        else:
+            return s2
